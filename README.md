@@ -11,5 +11,5 @@ Welcome to my cybersecurity documentation repository! As a Cybersecurity undergr
 | **[Offensive Tooling](./Offensive-Tooling/)** | Metasploit, Hydra, Gobuster, SQLMap | 🟢 Active |
 | **[Defensive & DFIR](./Defensive-DFIR/)** | SIEM, Snort IDS, Incident Response Basics | 🟢 Active |
 
----
+----
 *Maintained by [Ibrahim Al Majali](https://linkedin.com/in/ibrahim-majali)*
