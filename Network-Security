@@ -1,0 +1,28 @@
+# Room Write-up: Nmap Basics
+**Platform:** TryHackMe | **Module:** Network Security
+
+## 🎯 Objective
+Learn the fundamentals of network scanning using Nmap to discover live hosts, open ports, and running services.
+
+## 🛠️ Key Commands & Syntax
+```bash
+# Basic TCP SYN Scan (Stealth Scan)
+nmap -sS -T4 <target_ip>
+
+# Comprehensive Scan (Version detection, OS detection, default scripts, all ports)
+nmap -sV -O -sC -p- <target_ip>
+🔍 Methodology & Steps
+
+    Host Discovery: Ping sweep or default scan to check which IP addresses are active on the target network.
+
+    Port Scanning: Used -sS to scan for open ports without completing the full TCP 3-way handshake, minimizing detection risk.
+
+    Service Enumeration: Applied -sV to probe open ports and determine the exact software versions running behind them.
+
+    Script Scanning: Ran Nmap Scripting Engine (-sC) to check for common misconfigurations or vulnerabilities.
+
+💡 Key Takeaways
+
+    Always match your scan timing template (-T0 to -T5) to the network environment to avoid crashing fragile systems or triggering loud alarms.
+
+    Service version detection is the critical first step before looking up potential exploits.
