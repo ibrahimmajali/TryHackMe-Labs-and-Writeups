@@ -23,3 +23,11 @@ To discover open ports and running services on the target machine, I ran an Nmap
 nmap -sV -sC -oN scan.txt 10.112.189.250
 ```
 ![Nmap Scan Results](nmap-scan.png)
+
+## 🔍 Phase 2: Vulnerability Analysis (Searchsploit)
+To research potential exploits for the services discovered during enumeration, I used `searchsploit` to check for known vulnerabilities associated with `UnrealIRCd`.
+
+```bash
+searchsploit UnrealIRCd
+```
+![SearchSploit Scan Results](SearchSploit.png)
