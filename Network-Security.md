@@ -62,3 +62,21 @@ set LPORT 443
 ```
 ![Setting Payload](payloads.png)
 
+Step 4: Execute Exploit & Establish Foothold
+
+Finally, I ran the exploit. The module successfully connected to the target, sent the IRC backdoor command, and opened a command shell session. 
+```Bash
+
+exploit
+```
+![Exploitation](Exploitation.png)
+🎉 Conclusion & Takeaways
+
+This guided penetration test successfully demonstrated a full infrastructure attack chain:
+
+    Reconnaissance: Identified a vulnerable IRC service using Nmap.
+
+    Vulnerability Research: Found a public exploit for a known backdoor (CVE-2010-2075) via Searchsploit.
+
+    Exploitation: Gained initial access and executed commands remotely using Metasploit.
+
