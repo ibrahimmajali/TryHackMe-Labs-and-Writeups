@@ -80,3 +80,16 @@ This guided penetration test successfully demonstrated a full infrastructure att
 
     Exploitation: Gained initial access and executed commands remotely using Metasploit.
 
+    ## 🔓 Phase 4: Privilege Escalation
+Once initial access was established, I enumerated the local file system for privilege escalation vectors. I used the `find` command to search for files with "password" in their name, piping errors to `/dev/null` for a cleaner output.
+
+```bash
+find / -name password* 2>/dev/null
+```
+This search revealed a highly unusual file located at /etc/password.txt. Reading the file exposed plaintext credentials for the root user
+```bash
+cat /etc/password.txt
+```
+![Finding the root password](
+
+
