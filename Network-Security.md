@@ -90,6 +90,31 @@ This search revealed a highly unusual file located at /etc/password.txt. Reading
 ```bash
 cat /etc/password.txt
 ```
-![Finding the root password](
+![Finding the root password](Password.png)
+
+🏆 Phase 5: Root Access & Flag Capture
+
+Using the discovered credentials (root:PDLrCVl1pLD91U0JMmCz), I opened a new terminal and connected to the target via SSH.
+```bash
+ssh root@10.112.189.250
+```
+The SSH connection was successful, granting full administrative access to the system. I located and read the final root flag to complete the room.
+```bash
+cat flag.txt
+# Output: THM{Escalat1on-**************}
+```
+![Finding the Flag](flag.png)
+
+🎉 Conclusion & Takeaways
+
+This guided penetration test successfully demonstrated a full infrastructure attack chain:
+
+    Reconnaissance: Identified a vulnerable IRC service using Nmap.
+
+    Vulnerability Research: Found a public exploit for a known backdoor (CVE-2010-2075) via Searchsploit.
+
+    Exploitation: Gained initial access and executed commands remotely using Metasploit.
+
+    Privilege Escalation: Discovered plaintext root credentials stored insecurely on the local file system to achieve full system compromise.
 
 
