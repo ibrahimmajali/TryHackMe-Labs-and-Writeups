@@ -31,3 +31,15 @@ To research potential exploits for the services discovered during enumeration, I
 searchsploit UnrealIRCd
 ```
 ![SearchSploit Scan Results](SearchSploit.png)
+
+💥 Phase 3: Exploitation (Metasploit RCE)
+
+With the vulnerable version of UnrealIRCd identified, we can launch Metasploit to exploit the backdoor and gain initial access.
+Step 1: Search and Select the Module
+
+First, I searched for the UnrealIRCd backdoor module within Metasploit and selected it using its index number.
+```bash
+search unrealircd
+use 0
+```
+![MetaSploit Search Results](metasploit-search.png)
