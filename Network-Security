@@ -1,28 +1,23 @@
-# Room Write-up: Nmap Basics
-**Platform:** TryHackMe | **Module:** Network Security
+# Room Write-up: Guided Penetration Test
+**Platform:** TryHackMe | **Module:** Offensive Security & Pentesting
 
-## 🎯 Objective
-Learn the fundamentals of network scanning using Nmap to discover live hosts, open ports, and running services.
+## 🎯 Task 1: Introduction & Objectives
+This room walks through a full infrastructure penetration testing methodology, focusing on real-world enumeration and exploitation phases.
 
-## 🛠️ Key Commands & Syntax
+### Core Penetration Testing Methodology:
+- **Enumeration:** Gathering information about the target, identifying what services and open ports exist[cite: 32].
+- **Vulnerability Analysis:** Analyzing enumeration results to connect potential security weaknesses[cite: 32].
+- **Initial Access:** Choosing and executing an attack vector to gain a foothold on the target system[cite: 32].
+- **Privilege Escalation:** Escalating privileges from a standard user to root or administrator[cite: 32].
+- **Reporting:** Communicating findings clearly as the final deliverable[cite: 32].
+
+### Learning Objectives:
+- Scan a Linux host using tools and techniques[cite: 32].
+- Research vulnerable software to discover a working exploit[cite: 32].
+- Enumerate local Linux files for privilege escalation vectors[cite: 32].
+
+## 🔍 Phase 1: Enumeration (Nmap Scan)
+To discover open ports and running services on the target machine, I ran an Nmap scan with service version detection (`-sV`) and default scripting (`-sC`), saving the output to `scan.txt`.
+
 ```bash
-# Basic TCP SYN Scan (Stealth Scan)
-nmap -sS -T4 <target_ip>
-
-# Comprehensive Scan (Version detection, OS detection, default scripts, all ports)
-nmap -sV -O -sC -p- <target_ip>
-🔍 Methodology & Steps
-
-    Host Discovery: Ping sweep or default scan to check which IP addresses are active on the target network.
-
-    Port Scanning: Used -sS to scan for open ports without completing the full TCP 3-way handshake, minimizing detection risk.
-
-    Service Enumeration: Applied -sV to probe open ports and determine the exact software versions running behind them.
-
-    Script Scanning: Ran Nmap Scripting Engine (-sC) to check for common misconfigurations or vulnerabilities.
-
-💡 Key Takeaways
-
-    Always match your scan timing template (-T0 to -T5) to the network environment to avoid crashing fragile systems or triggering loud alarms.
-
-    Service version detection is the critical first step before looking up potential exploits.
+nmap -sV -sC -oN scan.txt 10.112.189.250
