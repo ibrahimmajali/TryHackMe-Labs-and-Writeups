@@ -21,4 +21,4 @@ To discover open ports and running services on the target machine, I ran an Nmap
 
 ```bash
 nmap -sV -sC -oN scan.txt 10.112.189.250
-![Nmap Scan Results](Screenshot from 2026-09-28 20-51-53.png)
+![Nmap Scan Results](nmap-scan.png)
