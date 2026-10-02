@@ -23,7 +23,7 @@ When services do not implement rate limiting or account lockouts, they are vulne
 
 hydra -l lazie -P rockyou.txt -f 10.112.158.237 imap -V
 ```
-##🔒 Phase 3: Secure Remote Access (SSH)
+## 🔒 Phase 3: Secure Remote Access (SSH)
     To mitigate the risks of cleartext credentials being intercepted over the network, secure protocols like SSH (Secure Shell) must be used. I connected to the target machine (10.112.158.237) as the user mark via SSH.   This provided an encrypted terminal session on the Ubuntu 20.04.6 LTS server, allowing safe remote management and file access
 ```Bash
 
